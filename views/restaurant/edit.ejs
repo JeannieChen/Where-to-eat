@@ -1,0 +1,49 @@
+<%- include("../partials/header") %>
+
+<div class="container">
+	<h3 style="text-align: center"> Edit <%= restaurant.name %> </h3>
+	<form action="/restaurant/<%= restaurant._id %>?_method=PUT" method="POST">
+		<div style="width: 65%; margin: 2rem auto">
+			<div class="form-group">
+    			<label for="formGroupExampleInput">Restaurant Name</label>
+	  			<input type="text" name="restaurant[name]" value="<%= restaurant.name %>" class="form-control" id="formGroupExampleInput">
+  			</div>
+
+			<div class="form-row">
+				<div class="col-md-6 mb-3">
+					<label for="validationDefault03">City</label>
+					<input type="text" name="restaurant[city]" value="<%= restaurant.city %>" class="form-control" id="formGroupExampleInput">
+				</div>
+				<div class="col-md-3 mb-3">
+					<label for="validationDefault04">State</label>
+					<input type="text" name="restaurant[state]" value="<%= restaurant.state %>" class="form-control" id="formGroupExampleInput">
+				</div>
+				<div class="col-md-3 mb-3">
+					<label for="validationDefault05">Country</label>
+					<input type="text" name="restaurant[country]" value="<%= restaurant.country %>" class="form-control" id="formGroupExampleInput">
+				</div>
+			</div>
+			
+			<div class="form-group">
+    			<label for="formGroupExampleInput"> Price</label>
+	  			<input type="number" name="restaurant[price]" value="<%= restaurant.price %>" min="0.01" step="0.01" class="form-control" id="formGroupExampleInput">
+  			</div>
+			<div class="form-group">
+    			<label for="formGroupExampleInput"> Website (Optional)</label>
+	  			<input type="text" name="restaurant[link]" value="<%= restaurant.link %>" class="form-control" id="formGroupExampleInput2">
+  			</div>
+  			<div class="form-group">
+    			<label for="formGroupExampleInput2">Image Address</label>
+	  			<input type="text" name="restaurant[image]" value="<%= restaurant.image %>" class="form-control" id="formGroupExampleInput2">
+  			</div>	
+			<div class="form-group">
+    			<label for="formGroupExampleInput2">Description</label>
+				<textarea rows="5" name="restaurant[description]" class="form-control" id="formGroupExampleInput2"><%= restaurant.description %></textarea>
+  			</div>	
+
+			<button type="submit" class="btn btn-outline-primary btn-block">Submit</button>	
+		</div>
+	</form>
+</div>
+
+<%- include("../partials/footer") %>

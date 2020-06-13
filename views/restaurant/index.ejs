@@ -1,0 +1,43 @@
+<%- include("../partials/header") %>
+
+<div class="container">
+	<div class="jumbotron">
+		<h1 class="display-4"><i class="fal fa-stars"></i> Welcome to FeedMe </h1>
+		<p> View our hand-picked restaurants</p>
+		<p>
+			<a class="btn btn-outline-secondary special-font-md" href="/restaurant/new"> Add New Restaurant here!</a>
+		</p>
+	</div>
+	
+	<div class="row tex-center" style="display:flex; flex-wrap:wrap;">
+		<div class="col-lg-12">
+			<h4> Our Most Popular Restaurants </h4>
+		</div>
+		
+		<% restaurants.forEach(function(items){ %>
+		<div class="col-sm-6 col-md-4">			
+			<div class="card shadow rounded">
+				<img src = "<%= items.image  %>" class="card-img-top" alt="Responsive image">
+				<div class="card-body">
+					<h4 class="card-title"><%= items.name %></h4>
+					<h6 class="card-subtitle mb-2 text-muted">
+						<i class="fal fa-map-marker-alt"></i>
+						<% if(items.city && items.state && items.country){ %>
+							<%= items.city %>, <%= items.state %>, <%= items.country %>
+						<% } else{ %>
+							Somewhere on earth	
+						<% } %>
+					</h6>
+					<p>
+						<a href="/restaurant/<%= items._id %>" class="btn btn-sm btn-outline-secondary" >More Info</a
+					</p>
+				</div>
+			</div>		
+		</div>
+		<%  }) %>
+	</div>
+	
+</div>
+	
+	
+<%- include("../partials/footer") %>
