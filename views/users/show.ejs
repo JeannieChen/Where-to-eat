@@ -30,10 +30,11 @@
 			<% restaurant.forEach(function(restaurant){ %>
 			<ul class="list-group list-group-flush">
 				<li class="list-group-item">
+					<i class="fal fa-map-marker-alt"></i>
 					<a href="/restaurant/<%= restaurant._id %>" ><%= restaurant.name %></a>
+					in <%= restaurant.city %>, <%= restaurant.state %>
 					<footer class="blockquote-footer float-right">
 							<cite title="Source Title">
-								<%= moment(restaurant.createdAt).fromNow() %>,
 								<%= restaurant.createdAt.toDateString() %>
 							</cite>
 					</footer>
@@ -42,8 +43,23 @@
 			</ul>
 			
 			<br>
-			<!-- <h4>Comments</h4>
-			<% comments.forEach(function(comment){ %>
+			<h4>Comments</h4>
+			
+<!-- 			 -->
+			<% restaurant.forEach(function(restaurant){ %>
+				<% comments.forEach(function(comment){ %>
+					<% if (comment.restaurant.toString().trim() == restaurant._id.toString().trim()){ %>
+						<li><%= comment.text %></li>
+					<% } %>
+				<% }) %>	
+			<i class="fal fa-map-marker-alt"><%= restaurant.name %>	</i>
+			<% }) %>
+			
+			
+			
+			
+<!-- 			 -->
+			<!-- <% comments.forEach(function(comment){ %>
 					<li class="list-group-item">
 						<%= comment.text %>
 						
@@ -62,13 +78,12 @@
 						<% } %>
 						<footer class="blockquote-footer float-right">
 							<cite title="Source Title">
-								<%= moment(comment.createdAt).fromNow() %>,
 								<%= comment.createdAt.toDateString() %>
 							</cite>
 						</footer>
 					</li>
-			<% }) %> -->
-			
+			<% }) %>
+			 -->
 		</div>
 		
 	</div>

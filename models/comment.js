@@ -1,7 +1,7 @@
 
 var mongoose = require("mongoose");
  
-var commentSchema = new mongoose.Schema({
+var FeedMeCommentSchema = new mongoose.Schema({
 	createdAt: {
 	   type: Date,
 	   default: Date.now
@@ -10,7 +10,7 @@ var commentSchema = new mongoose.Schema({
     author: {
 		id: {
 			type: mongoose.Schema.Types.ObjectId,
-			ref: "User"
+			ref: "FeedMeUser"
 		},
 		username: String
 	},
@@ -18,7 +18,13 @@ var commentSchema = new mongoose.Schema({
 	rating: {
         type: Number,
         default: 0
-    }
+    },
+   restaurant: [
+      {
+         type: mongoose.Schema.Types.ObjectId,
+         ref: "FeedMeRestaurant"
+      }
+   ]
 });
  
-module.exports = mongoose.model("Comment", commentSchema);
+module.exports = mongoose.model("FeedMeComment", FeedMeCommentSchema);

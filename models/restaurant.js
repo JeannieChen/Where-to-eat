@@ -1,6 +1,6 @@
 var mongoose = require("mongoose");
  
-var restaurantSchema = new mongoose.Schema({
+var FeedMeRestaurantSchema = new mongoose.Schema({
    createdAt: {
 	   type: Date,
 	   default: Date.now
@@ -16,22 +16,22 @@ var restaurantSchema = new mongoose.Schema({
    author: {
 	   id: {
 		   type: mongoose.Schema.Types.ObjectId,
-		   ref: "User"
+		   ref: "FeedMeUser"
 	   },
 	   username: String
    },
    comments: [
       {
          type: mongoose.Schema.Types.ObjectId,
-         ref: "Comment"
+         ref: "FeedMeComment"
       }
    ],
 	
    likes: [
         {
             type: mongoose.Schema.Types.ObjectId,
-            ref: "User"
+            ref: "FeedMeUser"
         }
     ]
 });
-module.exports = mongoose.model("Restaurant", restaurantSchema);
+module.exports = mongoose.model("FeedMeRestaurant", FeedMeRestaurantSchema);

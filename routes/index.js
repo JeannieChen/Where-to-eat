@@ -64,7 +64,7 @@ router.get("/users/:id", function(req, res){
 			res.redirect("back");
 		}else{
 
-Restaurant.find().where('author.id').equals(foundUser._id).exec(function(err,restaurant){
+		Restaurant.find().where('author.id').equals(foundUser._id).exec(function(err,restaurant){
 				if(err){
 					req.flash("error", err.message);
 					res.redirect("back");

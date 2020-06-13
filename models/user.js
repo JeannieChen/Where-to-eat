@@ -1,7 +1,7 @@
 var mongoose = require("mongoose"),
 	passportLocalMongoose = require("passport-local-mongoose");
 
-var UserSchema = new mongoose.Schema({
+var FeedMeUserSchema = new mongoose.Schema({
 	username: String,
 	password: String,
 	isAdmin: {type: Boolean, default: false},
@@ -9,6 +9,6 @@ var UserSchema = new mongoose.Schema({
 	email: String
 });
 
-UserSchema.plugin(passportLocalMongoose);
+FeedMeUserSchema.plugin(passportLocalMongoose);
 
-module.exports = mongoose.model("User", UserSchema);
+module.exports = mongoose.model("FeedMeUser", FeedMeUserSchema);
