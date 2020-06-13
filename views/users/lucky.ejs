@@ -1,14 +1,19 @@
 
 <%- include("../partials/header") %>
-
-<p>
-	restaurant:
-	<%= restaurant.length %>
-
 	<!-- Randomly pick one from restaurant array -->
 	<% var randomItem = restaurant[Math.floor(Math.random()* restaurant.length)]; %>
-	Name: <%= randomItem.name %>
 
-</p>
+<div class="container d-flex justify-content-center lucky-body">
+	<div class="card shadow-lg rounded" style="width: 30rem;">
+		<img src="<%= randomItem.image %>" class="card-img-top" alt="...">
+		<div class="card-body">
+			<h5 class="card-title"><%= randomItem.name %></h5>
+			<p class="card-text"><%= randomItem.description %></p>
+			<a href="/restaurant/<%= randomItem._id %>" class="btn btn-outline-secondary">Go!</a>
+			<a href="<%= user._id %>" class="btn btn-link float-right">Hmm..maybe another one?</a>
+  		</div>
+		
+	</div>	
+</div>
 
 <%- include("../partials/footer") %>

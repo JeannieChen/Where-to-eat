@@ -7,6 +7,12 @@ body {
 	background-image: url("https://images.unsplash.com/photo-1454944338482-a69bb95894af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60");
 }
 
+
+.lucky-body{
+	background: url(
+		"https://img.51miz.com/Element/01/00/44/82/dbad6c8a_E1004482_5cc5d92d.jpg")
+}
+
 .checked {
     color: orange;
 }
@@ -121,6 +127,7 @@ body {
 .user-comment-img {
 	margin-left: 1.5rem;
 }
+
 
 #comment {
 	margin-top: 20px;
