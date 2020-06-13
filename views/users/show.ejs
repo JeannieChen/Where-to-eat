@@ -47,24 +47,30 @@
 			
 <!-- 			 -->
 			<% restaurant.forEach(function(restaurant){ %>
+			
+			<div class="">
+				<div class="row no-gutters">
+					<div class="col-md-2">
+						<img src="<%= restaurant.image %>" class="card-img" style="width: 5rem;height:5rem;">
+					</div>
+					<div class="col-md-10 float-left">
+						<h6><%= restaurant.name %></h6>
+					</div>
+				</div>
+			</div>
+			
+
+				<!-- <i class="fal fa-map-marker-alt"></i>
+				<a class="" href="/restaurant/<%= restaurant._id %>">
+					<%= restaurant.name %>
+				</a> -->
+			
+			<ul class="list-group list-group-flush">
 				<% comments.forEach(function(comment){ %>
 					<% if (comment.restaurant.toString().trim() == restaurant._id.toString().trim()){ %>
-						<li><%= comment.text %></li>
-					<% } %>
-				<% }) %>	
-			<i class="fal fa-map-marker-alt"><%= restaurant.name %>	</i>
-			<% }) %>
-			
-			
-			
-			
-<!-- 			 -->
-			<!-- <% comments.forEach(function(comment){ %>
-					<li class="list-group-item">
-						<%= comment.text %>
-						
+					<li class="list-group-item">"<%= comment.text %>"
 						<% if (comment.rating !== 0) { %>
-						<p>
+						<p class="float-right">
             <span class="fa fa-star checked"></span>
             <span class="fa fa-star <% if (comment.rating > 1) { %> checked <% } %>"></span>
             <span class="fa fa-star <% if (comment.rating > 2) { %> checked <% } %>"></span>
@@ -72,18 +78,22 @@
             <span class="fa fa-star <% if (comment.rating > 4) { %> checked <% } %>"></span>
                    		</p>
 						<% } %>
-						
-						<% if (comments.length > 1){ %>
-							<br>
-						<% } %>
-						<footer class="blockquote-footer float-right">
+						<footer class="blockquote-footer">
 							<cite title="Source Title">
 								<%= comment.createdAt.toDateString() %>
 							</cite>
 						</footer>
 					</li>
+				
+					<% } %>
+				<% }) %>		
+
+				<br>
+			</ul>
 			<% }) %>
-			 -->
+			
+			
+			
 		</div>
 		
 	</div>
