@@ -1,11 +1,20 @@
 <%- include("../partials/header") %>
 
-<div class="container">
+<div class="container index-body">
 	<div class="jumbotron">
-		<h1 class="display-4"><i class="fal fa-stars"></i> Welcome to FeedMe </h1>
+		<h1 class="display-4">
+			<i class="fal fa-soup"></i>			
+			Welcome to FeedMe 
+		</h1>
 		<p> View our hand-picked restaurants</p>
 		<p>
-			<a class="btn btn-outline-secondary special-font-md" href="/restaurant/new"> Add New Restaurant here!</a>
+		<!-- <a class="btn btn-outline-secondary special-font-md" href="/restaurant/new"> -->
+			<% if(currentUser){ %>
+				<a class="btn btn-outline-secondary special-font-md" href="lucky/<%= currentUser._id %>">
+				Feeling lucky?
+			</a>
+			<% } %>
+
 		</p>
 	</div>
 	

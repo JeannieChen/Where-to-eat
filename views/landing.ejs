@@ -6,7 +6,8 @@
         <link rel="stylesheet" href="/stylesheets/main.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript" async></script>
     </head>
-    <body>
+    
+	<body class="landing-body">
     
     <div class="container">
         <% if(error && error.length > 0){ %>
@@ -22,16 +23,16 @@
     </div>
     
     <div id="landing-header">
- 		<h1>What to eat today?</h1>
-		<a href="/restaurant" class="btn btn-lg btn-outline-light">View Ideas</a>
+ 		<h1>Feeling Hungry?</h1>
+		<a href="/restaurant" class="btn btn-lg landing-btn">View Ideas</a>
     </div>
     
-    <ul class="slideshow">
+    <!-- <ul class="slideshow">
       <li></li>
       <li></li>
       <li></li>
       <li></li>
       <li></li>
-    </ul>
+    </ul> -->
 
 <%- include("partials/footer") %>

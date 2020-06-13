@@ -87,6 +87,28 @@ router.get("/users/:id", function(req, res){
 	})
 });
 
+// Feeling lucky
+router.get("/lucky/:id", middleware.isLoggedIn, function(req, res){
+	User.findById(req.params.id, function(err, foundUser){
+		if(err){
+			req.flash("error", err.message);
+			res.redirect("back");
+		}else{
+				Restaurant.find().exec(function(err,restaurant){
+				if(err){
+					console.log("restaurant error")
+					req.flash("error", err.message);
+					res.redirect("back");
+				}else{
+					res.render("users/lucky", {
+							user: foundUser,
+							restaurant: restaurant
+					})
+				}
+			})
+	}})
+});
+
 
 module.exports = router;
 

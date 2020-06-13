@@ -1,0 +1,14 @@
+
+<%- include("../partials/header") %>
+
+<p>
+	restaurant:
+	<%= restaurant.length %>
+
+	<!-- Randomly pick one from restaurant array -->
+	<% var randomItem = restaurant[Math.floor(Math.random()* restaurant.length)]; %>
+	Name: <%= randomItem.name %>
+
+</p>
+
+<%- include("../partials/footer") %>

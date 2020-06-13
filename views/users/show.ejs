@@ -43,27 +43,21 @@
 			</ul>
 			
 			<br>
-			<h4>Comments</h4>
-			
-<!-- 			 -->
-			<% restaurant.forEach(function(restaurant){ %>
-			
+			<h4>Comments</h4><br>
+			<% restaurant.forEach(function(restaurant){ %>	
 			<div class="">
 				<div class="row no-gutters">
 					<div class="col-md-2">
-						<img src="<%= restaurant.image %>" class="card-img" style="width: 5rem;height:5rem;">
+						<img src="<%= restaurant.image %>" class="card-img user-comment-img" style="width: 5rem;height:5rem;">
 					</div>
 					<div class="col-md-10 float-left">
-						<h6><%= restaurant.name %></h6>
+						<h5><%= restaurant.name %></h5>
+						<small>
+							<i class="fal fa-map-marker-alt"></i>
+							<%= restaurant.city %>, <%= restaurant.state %></small>
 					</div>
 				</div>
 			</div>
-			
-
-				<!-- <i class="fal fa-map-marker-alt"></i>
-				<a class="" href="/restaurant/<%= restaurant._id %>">
-					<%= restaurant.name %>
-				</a> -->
 			
 			<ul class="list-group list-group-flush">
 				<% comments.forEach(function(comment){ %>

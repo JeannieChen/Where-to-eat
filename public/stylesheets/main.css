@@ -3,6 +3,10 @@ body {
 	font-family: 'Roboto', sans-serif;
 }
 
+.landing-body{
+	background-image: url("https://images.unsplash.com/photo-1454944338482-a69bb95894af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60");
+}
+
 .checked {
     color: orange;
 }
@@ -23,7 +27,7 @@ body {
     margin: 0.3rem;
 }
 
-.slideshow li:nth-child(1) { 
+/* .slideshow li:nth-child(1) { 
   background-image: url(https://images.unsplash.com/photo-1533777857889-4be7c70b33f7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60) 
 }
 .slideshow li:nth-child(2) { 
@@ -41,7 +45,7 @@ body {
 .slideshow li:nth-child(5) { 
   background-image: url(https://images.unsplash.com/photo-1527224538127-2104bb71c51b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60);
   animation-delay: 40s; 
-}
+} */
 
 .col-md-4 {
 	padding-top: 20px;
@@ -114,6 +118,10 @@ body {
     border-radius: .3rem;
 }
 
+.user-comment-img {
+	margin-left: 1.5rem;
+}
+
 #comment {
 	margin-top: 20px;
 }
@@ -126,9 +134,15 @@ body {
 }
 
 #landing-header h1 {
-  color: #fff;
+  color: #8a7f20;
+  size: 3.5rem;
 }
 
+
+.landing-btn {
+    color: #a0900f;
+    border-color: #a08f0f;
+}
 
 
 @keyframes imageAnimation { 
