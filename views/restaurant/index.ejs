@@ -1,26 +1,32 @@
 <%- include("../partials/header") %>
 
 <div class="container index-body">
+	
+	<form action="/restaurant" method="GET" class="form-inline my-2 my-lg-0 float-right">
+		<input class="form-control mr-sm-2" type="text" name="search" placeholder="i.e. Asia Fusion">
+		<button class="btn btn-sm btn-outline-secondary my-2 my-sm-0" type="submit">
+			Search
+		</button>
+    </form>
+	
 	<div class="jumbotron">
-		<h1 class="display-4">
+		<h1 class="display-4 index-header">
 			<i class="fal fa-soup"></i>			
 			Welcome to FeedMe 
 		</h1>
-		<p> View our hand-picked restaurants</p>
-		<p>
 		<!-- <a class="btn btn-outline-secondary special-font-md" href="/restaurant/new"> -->
 			<% if(currentUser){ %>
 				<a class="btn btn-outline-secondary special-font-md" href="lucky/<%= currentUser._id %>">
 				Feeling lucky?
 			</a>
 			<% } %>
-
-		</p>
 	</div>
 	
 	<div class="row tex-center" style="display:flex; flex-wrap:wrap;">
 		<div class="col-lg-12">
-			<h4> Our Most Popular Restaurants </h4>
+			<h4> 
+				<i class="fal fa-ellipsis-v"></i>
+				View our hand-picked restaurants </h4>
 		</div>
 		
 		<% restaurants.forEach(function(items){ %>
