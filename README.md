@@ -10,4 +10,4 @@ Feature includes:
 - Fuzzy search for restaurants on home page
 - Display time since post was created with Moment JS
 
-This app is deployed at https://aqueous-cove-61246.herokuapp.com/restaurant .
+This app is deployed on https://where-to-eat.onrender.com/
