@@ -20,9 +20,12 @@ var commentRoutes = require("./routes/comments"),
 // Connect to DB 
 // seedDB(); // Seed the database
 // COPY: mongodb, view engine setup
-mongoose.connect("mongodb+srv://JeannieChen:[pwd]@cluster0-ybpsb.mongodb.net/<dbname>?retryWrites=true&w=majority", {
+// orig: mongodb+srv://JeannieChen:[pwd]@cluster0-ybpsb.mongodb.net/<dbname>?retryWrites=true&w=majority
+//mongodb+srv://jeanniechen:JmzkBAfkJQ9NlNLN@cluster0.fflxs.mongodb.net/
+mongoose.connect("mongodb+srv://jeanniechen:JmzkBAfkJQ9NlNLN@cluster0.fflxs.mongodb.net/", {
 	useNewUrlParser: true,
-	useCreateIndex: true
+	useCreateIndex: true,
+	useUnifiedTopology: true
 }).then(() => {
 	console.log("Connected to DB.");
 }).catch(err => {
@@ -42,9 +45,10 @@ app.use(express.static(__dirname + "/public"));
 // Passport Config
 app.use(require("express-session")({
 	secret: "blablabla",
-	resave: false,
-	saveUnitialized: false
+	resave: true,
+	saveUninitialized: true
 }));
+
 app.use(passport.initialize());
 app.use(passport.session());
 passport.use(new localStrategy(User.authenticate()));

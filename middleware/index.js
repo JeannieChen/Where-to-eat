@@ -1,7 +1,7 @@
 var Restaurant = require("../models/restaurant");
 var Comment = require("../models/comment");
 
-// all the middleare goes here
+// all the middlware goes here
 var middlewareObj = {};
 
 middlewareObj.checkCampgroundOwnership = function(req, res, next) {

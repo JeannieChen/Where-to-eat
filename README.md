@@ -1,4 +1,4 @@
-# FeedMe
+# Where to eat - FeedMe!
 FeedMe is a restaurant rating app, where users can add new restaurant, view and comment on others' restaurants. Signed in users also have the access to food roulette feature which will randomly pick one of the restaurants each time.
 
 Feature includes:
